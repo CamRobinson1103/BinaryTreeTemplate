@@ -35,6 +35,8 @@ void BinaryTree::remove(int value)
 {
 	//Create two TreeNode pointers: one to hold a reference to the node we want to remove
 	//and another to hold a reference to its parent.
+	TreeNode* toRemove = find(value);
+	TreeNode* parent = m_root;
 
 	//Try to find the node that matches the value given and its parent in the tree.
 	//If the node cannot be found return.
