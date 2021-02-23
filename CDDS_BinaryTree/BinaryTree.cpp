@@ -9,9 +9,14 @@ BinaryTree::~BinaryTree()
 void BinaryTree::insert(int value)
 {
 	//If the tree is empty, set the root to be a new node with the given value.
+	if (isEmpty() == true)
+	{
 
-	//Create a TreeNode pointer that will act as an iterator pointing to the current node and set it to the root.
+	}
+		//Create a TreeNode pointer that will act as an iterator pointing to the current node and set it to the root.
+		TreeNode* iter;
 	//Create a TreeNode pointer that will act as an iterator pointing to the parent 
+	TreeNode* iter;
 	//of the current node and set it to the root.
 
 	//Loop until the the current node iterator reaches a nullptr.
@@ -101,6 +106,7 @@ TreeNode* BinaryTree::find(int value)
 
 void BinaryTree::draw(TreeNode* selected)
 {
+	draw(m_root, 400, 40, 400, selected);
 }
 
 bool BinaryTree::findNode(int searchValue, TreeNode*& nodeFound, TreeNode*& nodeParent)
@@ -125,4 +131,18 @@ bool BinaryTree::findNode(int searchValue, TreeNode*& nodeFound, TreeNode*& node
 
 void BinaryTree::draw(TreeNode* currentNode, int x, int y, int horizontalSpacing, TreeNode* selected)
 {
+	horizontalSpacing /= 2;
+	if(currentNode)
+		if (currentNode->hasLeft())
+		{
+			DrawLine(x, y, x - horizontalSpacing, y + 80, RED);
+			draw(currentNode->getLeft(), x - horizontalSpacing, y + 80, horizontalSpacing, selected);
+		}
+		if (currentNode->hasRight())
+		{
+			DrawLine(x, y, x + horizontalSpacing, y + 80, RED);
+			draw(currentNode->getLeft(), x + horizontalSpacing, y + 80, horizontalSpacing, selected);
+		}
+		currentNode->draw(x, y, (selected == currentNode));
+
 }
