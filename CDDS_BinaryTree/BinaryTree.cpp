@@ -9,14 +9,13 @@ BinaryTree::~BinaryTree()
 void BinaryTree::insert(int value)
 {
 	//If the tree is empty, set the root to be a new node with the given value.
-	if (isEmpty() == true)
+	if (isEmpty())
 	{
-
+		m_root = new TreeNode;
 	}
-		//Create a TreeNode pointer that will act as an iterator pointing to the current node and set it to the root.
+	//Create a TreeNode pointer that will act as an iterator pointing to the current node and set it to the root.
 		TreeNode* iter;
 	//Create a TreeNode pointer that will act as an iterator pointing to the parent 
-	TreeNode* iter;
 	//of the current node and set it to the root.
 
 	//Loop until the the current node iterator reaches a nullptr.
@@ -33,6 +32,7 @@ void BinaryTree::insert(int value)
 	//end loop
 
 	//If the value we want to add is less than the value of the parent node, insert the value to the left.
+
 	//Otherwise, insert the value to the right.
 }
 
@@ -45,6 +45,7 @@ void BinaryTree::remove(int value)
 
 	//Try to find the node that matches the value given and its parent in the tree.
 	//If the node cannot be found return.
+
 
 
 	//Check to see if the node has a right
@@ -91,8 +92,12 @@ void BinaryTree::remove(int value)
 TreeNode* BinaryTree::find(int value)
 {
 	//Initialize an iterator starting at the root.
+	m_root iter;
+	
 
 	//Loop through the tree while the iterator isn't nullptr.
+	while(TreeNode* != nullptr)
+		
 		//Check if the node has the data we want
 			//Return the iterator
 		//If the node doesn't have the data we want, check to see if it's higher in value.
@@ -100,6 +105,8 @@ TreeNode* BinaryTree::find(int value)
 		//If the node doesn't have the data we want, check to see if it's lower in value.
 			//Set the iterator to be its current left child.
 	//end loop
+
+
 
 	//Return nullptr
 }
