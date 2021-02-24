@@ -35,7 +35,10 @@ void BinaryTree::insert(int value)
 
 		while (currentNode != nullptr)
 		{
+			if (value < currentNode)
+			{
 
+			}
 		}
 
 	//If the value we want to add is less than the value of the parent node, insert the value to the left.
@@ -143,18 +146,30 @@ bool BinaryTree::findNode(int searchValue, TreeNode*& nodeFound, TreeNode*& node
 
 void BinaryTree::draw(TreeNode* currentNode, int x, int y, int horizontalSpacing, TreeNode* selected)
 {
+	//Decrease the horizontal space as the nodes draw
 	horizontalSpacing /= 2;
-	if(currentNode)
+
+	//Checks if thr current node is null
+	if (currentNode)
+	{
+		//Draws the left child if this node had one
 		if (currentNode->hasLeft())
 		{
+			//Draws a line between the left child and the current node
 			DrawLine(x, y, x - horizontalSpacing, y + 80, RED);
+			//Draws the left child
 			draw(currentNode->getLeft(), x - horizontalSpacing, y + 80, horizontalSpacing, selected);
 		}
+
+		//Draws the right child if this node has one
 		if (currentNode->hasRight())
 		{
+			//Draws a line between this child and the current node
 			DrawLine(x, y, x + horizontalSpacing, y + 80, RED);
-			draw(currentNode->getLeft(), x + horizontalSpacing, y + 80, horizontalSpacing, selected);
+			//Draws the right child
+			draw(currentNode->getRight(), x - horizontalSpacing, y + 80, horizontalSpacing, selected);
 		}
+		//Draws the current node
 		currentNode->draw(x, y, (selected == currentNode));
-
+	}
 }
