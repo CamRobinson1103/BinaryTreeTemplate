@@ -1,6 +1,7 @@
 #include "BinaryTree.h"
 #include "TreeNode.h"
 #include "raylib.h"
+#include <vector>
 
 BinaryTree::~BinaryTree()
 {
@@ -14,9 +15,10 @@ void BinaryTree::insert(int value)
 		m_root = new TreeNode;
 	}
 	//Create a TreeNode pointer that will act as an iterator pointing to the current node and set it to the root.
-		TreeNode* iter;
+		TreeNode* currentNode = m_root;
 	//Create a TreeNode pointer that will act as an iterator pointing to the parent 
 	//of the current node and set it to the root.
+		TreeNode* parent = m_root;
 
 	//Loop until the the current node iterator reaches a nullptr.
 		//Check if the value we want to add to the tree is less than the value at the current node.
@@ -30,6 +32,11 @@ void BinaryTree::insert(int value)
 		//If the value is the same as a value already in the list return 
 
 	//end loop
+
+		while (currentNode != nullptr)
+		{
+
+		}
 
 	//If the value we want to add is less than the value of the parent node, insert the value to the left.
 
@@ -92,11 +99,9 @@ void BinaryTree::remove(int value)
 TreeNode* BinaryTree::find(int value)
 {
 	//Initialize an iterator starting at the root.
-	m_root iter;
 	
-
 	//Loop through the tree while the iterator isn't nullptr.
-	while(TreeNode* != nullptr)
+	
 		
 		//Check if the node has the data we want
 			//Return the iterator
