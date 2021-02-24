@@ -1,10 +1,10 @@
 #include "BinaryTree.h"
 #include "TreeNode.h"
 #include "raylib.h"
-#include <vector>
 
 BinaryTree::~BinaryTree()
 {
+	
 }
 
 void BinaryTree::insert(int value)
@@ -35,10 +35,7 @@ void BinaryTree::insert(int value)
 
 		while (currentNode != nullptr)
 		{
-			if (value < currentNode)
-			{
-
-			}
+			
 		}
 
 	//If the value we want to add is less than the value of the parent node, insert the value to the left.
@@ -59,6 +56,8 @@ void BinaryTree::remove(int value)
 
 
 	//Check to see if the node has a right
+	if ( TreeNode::hasRight()right
+	}
 
 		//Initialize two iterators to find the node whose data will be copied and its parent.
 
@@ -102,9 +101,9 @@ void BinaryTree::remove(int value)
 TreeNode* BinaryTree::find(int value)
 {
 	//Initialize an iterator starting at the root.
+
 	
 	//Loop through the tree while the iterator isn't nullptr.
-	
 		
 		//Check if the node has the data we want
 			//Return the iterator
@@ -128,6 +127,8 @@ bool BinaryTree::findNode(int searchValue, TreeNode*& nodeFound, TreeNode*& node
 {
 	//Create two iterators: one that will point to the current node to compare the search value to,
 	//and the other to hold a reference to the parent.
+	TreeNode* toRemove = find(value);
+	TreeNode* parent = m_root;
 
 	//Loop while the current node iterator isn't nullptr/
 		//Check if the search value is the same as the current nodes data.
@@ -142,6 +143,7 @@ bool BinaryTree::findNode(int searchValue, TreeNode*& nodeFound, TreeNode*& node
 	//end loop
 
 	//Return false.
+	return false;
 }
 
 void BinaryTree::draw(TreeNode* currentNode, int x, int y, int horizontalSpacing, TreeNode* selected)

@@ -3,8 +3,6 @@
 
 #pragma once
 
-class TreeNode;
-
 class BinaryTree
 {
 public:

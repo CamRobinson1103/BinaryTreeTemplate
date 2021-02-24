@@ -2,7 +2,7 @@
 class TreeNode
 {
 public:
-	TreeNode() {};
+	TreeNode();;
 	TreeNode(int value);
 	~TreeNode() {};
 
