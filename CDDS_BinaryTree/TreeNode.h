@@ -2,7 +2,7 @@
 class TreeNode
 {
 public:
-	TreeNode();;
+	TreeNode();
 	TreeNode(int value);
 	~TreeNode() {};
 
@@ -21,7 +21,6 @@ public:
 
 private:
 	int m_value;
-
 	TreeNode* m_left;
 	TreeNode* m_right;
 };
