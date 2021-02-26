@@ -5,7 +5,6 @@
 TreeNode::TreeNode(int value)
 {
 	m_value = value;
-
 }
 
 void TreeNode::draw(int x, int y, bool selected)
@@ -15,18 +14,15 @@ void TreeNode::draw(int x, int y, bool selected)
 
 	sprintf(buffer, "%d", m_value);
 
-
-	//Draws outline of circle
+	// Draw the node to the screen
 	DrawCircle(x, y, 30, YELLOW);
-	if (selected)
-	{
-		DrawCircle(x, y, 28, GREEN);
-	}
-	else
-	{
-		DrawCircle(x, y, 28, BLACK);
-	}
-	//Draws text in center of the node
-	DrawText(buffer, x - 12, 7 - 12, 12, WHITE);
 
+	
+	if (selected)
+		DrawCircle(x, y, 28, GREEN);
+	else
+		DrawCircle(x, y, 28, BLACK);
+
+	// Draw value over the node
+	DrawText(buffer, x - 12, y - 12, 12, WHITE);
 }
